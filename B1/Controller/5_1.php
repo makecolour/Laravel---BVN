@@ -9,8 +9,20 @@
     <?php
         if($_SERVER["REQUEST_METHOD"] == "POST")
         {
-                $item = $_POST["item"];
+            if($_POST["item"]!="")
+            {
+                $item = $_POST["item"];  
+            }
+            else{
+                $item = "";
+            }
+            if($_POST["brand"]=="")
+            {
+                $brand = "";
+            }
+            else{
                 $brand = $_POST["brand"];
+            }    
             echo("Item: {$item}<br>");
             echo("Brand: {$brand}");
         }
